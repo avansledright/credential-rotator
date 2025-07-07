@@ -1,0 +1,27 @@
+image:
+  repository: credential-rotator
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# API configuration
+api:
+  url: "https://api.example.com/credentials"
+  key: ""
+
+# Target secret configuration
+secret:
+  name: "app-credentials"
+  namespace: "default"
+
+# CronJob configuration
+cronJob:
+  schedule: "0 0 */85 * *"  # Every 85 days at midnight
+  restartPolicy: Never
+  backoffLimit: 3
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+# Service Account
+serviceAccount:
+  create: true
+  name: "credential-rotator"

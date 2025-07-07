@@ -1,0 +1,12 @@
+apiVersion: v2
+name: credential-rotator
+description: OpenShift job for rotating API credentials in secrets
+version: 1.0.0
+keywords:
+  - openshift
+  - credentials
+  - secrets
+  - automation
+maintainers:
+  - name: DevOps Team
+    email: devops@company.com
